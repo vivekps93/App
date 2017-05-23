@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import { Component} from '@angular/core';
+import {Router} from '@angular/router';
+import { Platform} from 'ionic-angular';
 
 
 
@@ -8,11 +8,26 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
-
   constructor(
     public platform: Platform,
-    public menu: MenuController
-  ) {}
-  
+    public router : Router
+  ) {
+    this.intializeApp();
+  }
+
+  intializeApp()
+  {
+    var userCookie =  JSON.parse(localStorage.getItem('userCookie'));
+    if(userCookie != undefined)
+    {
+      console.log("user cookie is defined");
+      if(userCookie.userLogin.email != "" && userCookie.userLogin.password != "")
+      {
+        console.log("user cookie is defined");
+        this.router.navigate(['home']);
+        
+      }
+    }
+    this.router.navigate(['login']);
+  }
 }

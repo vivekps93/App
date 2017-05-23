@@ -6,9 +6,23 @@ import { MyApp } from './app.component';
 //import modules
 import {AppRoutingModule} from './app-routing.module';
 
+//import components
+import {Login} from '../pages/login/login';
+import {Register} from '../pages/register/register';
+import {Home} from '../pages/home/home';
+import {Settings} from '../pages/settings/settings';
+import {Profile} from '../pages/profile/profile';
+import {Calender} from '../pages/calender/calender';
+
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    Login,
+    Register,
+    Home,
+    Settings,
+    Profile,
+    Calender
   ],
   imports: [
     BrowserModule,

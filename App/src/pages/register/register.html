@@ -1,0 +1,39 @@
+<ion-header>
+
+</ion-header>
+<ion-content>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <ion-item>
+            <ion-label floating>FirstName</ion-label>
+            <ion-input type="text" formControlName="firstName" [(ngModel)]="newUser.FirstName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>LastName</ion-label>
+            <ion-input type="text" formControlName="lastName" [(ngModel)]="newUser.LastName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" formControlName="email" [(ngModel)]="newUser.Email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" formControlName="password" [(ngModel)]="newUser.Password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Confirm Password</ion-label>
+            <ion-input type="password" formControlName="confirmPassword" [(ngModel)]="newUser.ConfirmPassword"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Contact Number</ion-label>
+            <ion-input type="number" formControlName="contactNumber" [(ngModel)]="newUser.ContactNumber"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>DateOfBirth</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" formControlName="dateOfBirth" [(ngModel)]="newUser.DateOfBirth"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Country</ion-label>
+            
+        </ion-item>
+    </form>
+</ion-content>

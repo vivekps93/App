@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import {ReactiveFormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 
 //import modules
@@ -28,6 +29,7 @@ import {Calender} from '../pages/calender/calender';
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(MyApp),
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

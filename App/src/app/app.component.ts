@@ -17,7 +17,9 @@ export class MyApp {
 
   intializeApp()
   {
+    console.log("inside app component");
     var userCookie =  JSON.parse(localStorage.getItem('userCookie'));
+    console.log(userCookie);
     if(userCookie != undefined)
     {
       console.log("user cookie is defined");

@@ -4,5 +4,4 @@ import {Component} from '@angular/core';
     template:'register.html'
 })
 export class Register{
-
 }

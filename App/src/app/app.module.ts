@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 
@@ -15,6 +15,9 @@ import {Settings} from '../pages/settings/settings';
 import {Profile} from '../pages/profile/profile';
 import {Calender} from '../pages/calender/calender';
 
+//import services
+import {CountryService} from '../services/country.service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +26,8 @@ import {Calender} from '../pages/calender/calender';
     Home,
     Settings,
     Profile,
-    Calender
+    Calender,
+    Register
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,7 @@ import {Calender} from '../pages/calender/calender';
     MyApp
   ],
   providers: [
+    CountryService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import { ModalController} from 'ionic-angular';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import {UserLogin} from '../../models/userLogin';
+import {Register} from '../register/register';
 
 @Component({
     templateUrl:'login.html',
@@ -13,7 +15,8 @@ export class Login{
     userlogin : any;
 
     constructor(private router : Router,
-                public formBuilder : FormBuilder){
+                public formBuilder : FormBuilder,
+                public modalController : ModalController ){
         console.log("inside login component");
         this.userlogin = new UserLogin();
         this.initializeForm();
@@ -50,5 +53,7 @@ export class Login{
 
     openRegister(){
         console.log("inside open register click");
+        let registerModal = this.modalController.create(Register);
+        registerModal.present();
     }
 }

@@ -1,6 +1,6 @@
-import { Component} from '@angular/core';
+import { Component,ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
-import { Platform} from 'ionic-angular';
+import { Platform,Nav} from 'ionic-angular';
 
 
 
@@ -8,6 +8,7 @@ import { Platform} from 'ionic-angular';
   templateUrl: 'app.html'
 })
 export class MyApp {
+
   constructor(
     public platform: Platform,
     public router : Router

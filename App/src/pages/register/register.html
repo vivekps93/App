@@ -16,7 +16,9 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>FirstName</ion-label>
+                        <ion-label floating>FirstName
+                            <span *ngIf="registerForm.controls.firstName.errors?.required && registerForm.controls.firstName.touched">is required</span>
+                        </ion-label>
                         <ion-input type="text" formControlName="firstName" [(ngModel)]="newUser.FirstName"></ion-input>
                     </ion-item>
                 </ion-col>
@@ -26,7 +28,9 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>LastName</ion-label>
+                        <ion-label floating>LastName
+                            <span *ngIf="registerForm.controls.lastName.errors?.required && registerForm.controls.lastName.touched">is required</span>
+                        </ion-label>
                         <ion-input type="text" formControlName="lastName" [(ngModel)]="newUser.LastName"></ion-input>
                     </ion-item>
                 </ion-col>
@@ -36,7 +40,10 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>Email</ion-label>
+                        <ion-label floating>Email
+                            <span *ngIf="registerForm.controls.email.errors?.required && registerForm.controls.email.touched">is required</span>
+                            <span *ngIf="!registerForm.controls.email.errors?.required && registerForm.controls.email.errors?.email && registerForm.controls.email.touched">is required</span>
+                        </ion-label>
                         <ion-input type="email" formControlName="email" [(ngModel)]="newUser.Email"></ion-input>
                     </ion-item>
                 </ion-col>
@@ -59,7 +66,9 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>Password</ion-label>
+                        <ion-label floating>Password
+                            <span *ngIf="registerForm.controls.password.errors?.required && registerForm.controls.password.touched">is required</span>
+                        </ion-label>
                         <ion-input type="password" formControlName="password" [(ngModel)]="newUser.Password"></ion-input>
                     </ion-item>
                 </ion-col>
@@ -69,7 +78,10 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>Confirm Password</ion-label>
+                        <ion-label floating>Confirm Password
+                            <span *ngIf="registerForm.controls.confirmPassword.errors?.required && registerForm.controls.confirmPassword.touched">is required</span>
+                            <span *ngIf="registerForm.errors?.matchPassword && registerForm.controls.confirmPassword.touched && registerForm.controls.password.touched">must match password</span>
+                        </ion-label>
                         <ion-input type="password" formControlName="confirmPassword" [(ngModel)]="newUser.ConfirmPassword"></ion-input>
                     </ion-item>
                 </ion-col>
@@ -79,7 +91,10 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>Contact Number</ion-label>
+                        <ion-label floating>Contact Number
+                            <span *ngIf="registerForm.controls.contactNumber.errors?.required && registerForm.controls.contactNumber.touched">is required</span>
+                            <span *ngIf="!registerForm.controls.contactNumber.errors?.required && registerForm.controls.contactNumber.errors?.maxlength && registerForm.controls.contactNumber.touched">is required</span>
+                        </ion-label>
                         <ion-input type="number" formControlName="contactNumber" [(ngModel)]="newUser.ContactNumber"></ion-input>
                     </ion-item>
                 </ion-col>
@@ -89,7 +104,9 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>DateOfBirth</ion-label>
+                        <ion-label floating>DateOfBirth
+                           <span *ngIf="registerForm.controls.dateOfBirth.errors?.required && registerForm.controls.dateOfBirth.touched">is required</span> 
+                        </ion-label>
                         <ion-datetime displayFormat="MM/DD/YYYY" formControlName="dateOfBirth" [(ngModel)]="newUser.DateOfBirth"></ion-datetime>
                     </ion-item>
                 </ion-col>
@@ -99,7 +116,9 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>Country</ion-label>
+                        <ion-label floating>Country
+                            <span *ngIf="registerForm.controls.country.errors?.required && registerForm.controls.country.touched">is required</span>
+                        </ion-label>
                         <ion-select [(ngModel)]="newUser.Country" formControlName="country">
                             <ion-option *ngFor="let country of countries" value="{{country.id}}">{{country.name}}</ion-option>
                         </ion-select>
@@ -110,7 +129,7 @@
             <ion-row>
                 <ion-col col-4 col-md-4 col-sm-2></ion-col>
                 <ion-col col-4 col-md-4 col-sm-8>
-                        <button ion-button type="submit">Regsiter</button>
+                        <button ion-button type="submit" [disabled]="registerForm.invalid">Regsiter</button>
                 </ion-col>
                 <ion-col col-4 col-md-4 col-sm-2></ion-col>
             </ion-row>

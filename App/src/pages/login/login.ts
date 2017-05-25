@@ -27,8 +27,8 @@ export class Login{
         this.userlogin.email = null;
         this.userlogin.password = null;
         this.loginForm = this.formBuilder.group({
-            'email' : [this.userlogin.email,Validators.required],
-            'password' : [this.userlogin.password,Validators.required]
+            'email' : [this.userlogin.email,Validators.compose([Validators.required,Validators.email])],
+            'password' : [this.userlogin.password,Validators.compose([Validators.required])]
         });
     }
 

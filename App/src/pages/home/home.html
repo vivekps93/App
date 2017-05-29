@@ -1,1 +1,19 @@
-<h2>Home</h2>
+<ion-menu [content]="content">
+  <!--<ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>-->
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <img src="../../assets/images/lionel-messi-90996.png">
+      </ion-item>
+      <button menuClose ion-item *ngFor="let page of pages" (click)="opnePage(page)" >
+        {{page.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>

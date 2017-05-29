@@ -14,6 +14,12 @@ import {Home} from '../pages/home/home';
 import {Settings} from '../pages/settings/settings';
 import {Profile} from '../pages/profile/profile';
 import {Calender} from '../pages/calender/calender';
+import {Index} from '../pages/home-index/home-index';
+import {HomeSelf} from '../pages/home/home-self/home.self';
+import {HomeSocial} from '../pages/home/home-social/home.social';
+import {NewGoal} from '../pages/goal/new/goal.new';
+import {NewSchedule} from '../pages/schedule/new/schedule.new';
+import {NewTask} from '../pages/task/new/task.new';
 
 //import services
 import {CountryService} from '../services/country.service';
@@ -27,7 +33,13 @@ import {CountryService} from '../services/country.service';
     Settings,
     Profile,
     Calender,
-    Register
+    Register,
+    Index,
+    HomeSelf,
+    HomeSocial,
+    NewGoal,
+    NewSchedule,
+    NewTask
   ],
   imports: [
     BrowserModule,
@@ -37,7 +49,10 @@ import {CountryService} from '../services/country.service';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    NewGoal,
+    NewSchedule,
+    NewTask
   ],
   providers: [
     CountryService,

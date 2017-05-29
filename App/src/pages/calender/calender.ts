@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-    template:'calender.html'
+    templateUrl:'calender.html'
 })
 export class Calender{
-
 }

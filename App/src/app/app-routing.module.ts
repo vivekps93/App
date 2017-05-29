@@ -8,7 +8,10 @@ import {Home} from '../pages/home/home';
 import {Settings} from '../pages/settings/settings';
 import {Profile} from '../pages/profile/profile';
 import {Calender} from '../pages/calender/calender';
+import {Index} from '../pages/home-index/home-index';
 import {MyApp} from './app.component';
+import {HomeSelf} from '../pages/home/home-self/home.self';
+import {HomeSocial} from '../pages/home/home-social/home.social';
 
 const appRoutes : Routes = [
     {path : '',component:MyApp},
@@ -18,6 +21,9 @@ const appRoutes : Routes = [
     {path : 'settings',component : Settings},
     {path : 'profile',component : Profile},
     {path : 'calender',component : Calender},
+    {path : 'index',component : Index},
+    {path : 'home-self',component:HomeSelf},
+    {path : 'home-social',component:HomeSocial},
 ];
 
 @NgModule({

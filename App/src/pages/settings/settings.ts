@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-    template:'settings.html'
+    templateUrl:'settings.html'
 })
 export class Settings{
 

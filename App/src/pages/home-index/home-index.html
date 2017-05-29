@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content>
+  <ion-tabs tabsPlacement="top">
+    <ion-tab tabTitle="Self" [root]="Self"></ion-tab>
+    <ion-tab tabTitle="Social" [root]="Social"></ion-tab>
+  </ion-tabs>
+</ion-content>

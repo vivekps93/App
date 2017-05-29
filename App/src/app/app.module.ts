@@ -17,7 +17,7 @@ import {Calender} from '../pages/calender/calender';
 import {Index} from '../pages/home-index/home-index';
 import {HomeSelf} from '../pages/home/home-self/home.self';
 import {HomeSocial} from '../pages/home/home-social/home.social';
-import {NewGoal} from '../pages/goal/new/goal.new';
+import {NewGoalComponent} from '../pages/goal/new/goal.new';
 import {NewSchedule} from '../pages/schedule/new/schedule.new';
 import {NewTask} from '../pages/task/new/task.new';
 
@@ -37,7 +37,7 @@ import {CountryService} from '../services/country.service';
     Index,
     HomeSelf,
     HomeSocial,
-    NewGoal,
+    NewGoalComponent,
     NewSchedule,
     NewTask
   ],
@@ -50,7 +50,7 @@ import {CountryService} from '../services/country.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    NewGoal,
+    NewGoalComponent,
     NewSchedule,
     NewTask
   ],

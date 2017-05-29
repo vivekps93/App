@@ -17,7 +17,7 @@
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
                         <ion-label floating>Title
-                            <span *ngIf="newGoalForm.controls.title.errors?.required && registerForm.controls.title.touched">is required</span>
+                            <span *ngIf="newGoalForm.controls.title.errors?.required && newGoalForm.controls.title.touched">is required</span>
                         </ion-label>
                         <ion-input type="text" formControlName="title" [(ngModel)]="newGoal.Title"></ion-input>
                     </ion-item>
@@ -28,19 +28,8 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>LastName</ion-label>
+                        <ion-label floating>Description</ion-label>
                         <ion-input type="text" formControlName="description" [(ngModel)]="newGoal.Description"></ion-input>
-                    </ion-item>
-                </ion-col>
-                <ion-col col-1 col-md-4 col-sm-2></ion-col>
-            <ion-row>
-                <ion-col col-1 col-md-4 col-sm-2></ion-col>
-                <ion-col col-10 col-md-4 col-sm-8>
-                    <ion-item>
-                        <ion-label floating>DateOfBirth
-                           <span *ngIf="newGoalForm.controls.startDate.errors?.required && newGoalForm.controls.startDate.touched">is required</span> 
-                        </ion-label>
-                        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="startDate" [(ngModel)]="newUser.StartDate"></ion-datetime>
                     </ion-item>
                 </ion-col>
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
@@ -49,10 +38,22 @@
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>
                 <ion-col col-10 col-md-4 col-sm-8>
                     <ion-item>
-                        <ion-label floating>DateOfBirth
+                        <ion-label floating>StartDate
+                           <span *ngIf="newGoalForm.controls.startDate.errors?.required && newGoalForm.controls.startDate.touched">is required</span> 
+                        </ion-label>
+                        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="startDate" [(ngModel)]="newGoal.StartDate"></ion-datetime>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>EndDate
                            <span *ngIf="newGoalForm.controls.endDate.errors?.required && newGoalForm.controls.endDate.touched">is required</span> 
                         </ion-label>
-                        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="endDate" [(ngModel)]="newUser.EndDate"></ion-datetime>
+                        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="endDate" [(ngModel)]="newGoal.EndDate"></ion-datetime>
                     </ion-item>
                 </ion-col>
                 <ion-col col-1 col-md-4 col-sm-2></ion-col>

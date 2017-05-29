@@ -1,12 +1,15 @@
-export class NewGoal{
+export class NewScheduleModel{
     Title : string;
     Description : string;
+    AttachedGoal : string;
     StartDate : Date;
-    EndDate : Date;
+    OcurranceDays : number;
+
     constructor(){
         this.Title = null;
         this.Description = null;
+        this.AttachedGoal = null;
         this.StartDate = null;
-        this.EndDate = null;
+        this.OcurranceDays = null;
     }
 }

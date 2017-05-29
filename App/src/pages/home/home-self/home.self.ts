@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,ModalController } from 'ionic-angular';
-import {NewGoal} from '../../goal/new/goal.new';
+import {NewGoalComponent} from '../../goal/new/goal.new';
 import {NewSchedule} from '../../schedule/new/schedule.new';
 import {NewTask} from '../../task/new/task.new';
 
@@ -18,7 +18,7 @@ export class HomeSelf {
   createNew(option){
     switch(option){
       case "Goal":
-        let newGoalModal = this.modalCtrl.create(NewGoal);
+        let newGoalModal = this.modalCtrl.create(NewGoalComponent);
         newGoalModal.present();
         break;
       case "Schedule":

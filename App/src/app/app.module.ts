@@ -20,10 +20,16 @@ import {HomeSocial} from '../pages/home/home-social/home.social';
 import {NewGoalComponent} from '../pages/goal/new/goal.new';
 import {NewSchedule} from '../pages/schedule/new/schedule.new';
 import {NewTask} from '../pages/task/new/task.new';
+import {GoalTimeline} from '../pages/goal/timeline/goal.timeline';
+import {GoalTimelineDetail} from '../pages/goal/timeline/goal.timeline.detail';
 
 //import services
 import {CountryService} from '../services/country.service';
 import {WeekService} from '../services/week.service';
+import {UserService} from '../services/user.service';
+import {GoalService} from '../services/goal.service';
+import {ScheduleService} from '../services/schedule.service';
+import {TaskService} from '../services/task.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,9 @@ import {WeekService} from '../services/week.service';
     HomeSocial,
     NewGoalComponent,
     NewSchedule,
-    NewTask
+    NewTask,
+    GoalTimeline,
+    GoalTimelineDetail
   ],
   imports: [
     BrowserModule,
@@ -53,11 +61,17 @@ import {WeekService} from '../services/week.service';
     MyApp,
     NewGoalComponent,
     NewSchedule,
-    NewTask
+    NewTask,
+    GoalTimeline,
+    GoalTimelineDetail
   ],
   providers: [
     CountryService,
     WeekService,
+    UserService,
+    GoalService,
+    ScheduleService,
+    TaskService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

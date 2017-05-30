@@ -3,6 +3,7 @@ import { NavController,ModalController } from 'ionic-angular';
 import {NewGoalComponent} from '../../goal/new/goal.new';
 import {NewSchedule} from '../../schedule/new/schedule.new';
 import {NewTask} from '../../task/new/task.new';
+import {GoalTimeline} from '../../goal/timeline/goal.timeline';
 
 @Component({
     templateUrl : 'home.self.html'
@@ -29,6 +30,19 @@ export class HomeSelf {
         let newTaskModal = this.modalCtrl.create(NewTask);
         newTaskModal.present();
         break;    
+    }
+  }
+  openTimeline(option){
+    console.log("open goal yimelien" + option);
+    switch(option){
+      case "Goal" :
+        let goalTimelineModal = this.modalCtrl.create(GoalTimeline);
+        goalTimelineModal.present();
+        break; 
+      case "Schedule" :
+        break;
+      case "Task" : 
+        break;
     }
   }
 

@@ -10,5 +10,123 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <h2>New Task</h2>
+  <form [formGroup]="newTaskForm" (ngSubmit)="createSchedule()">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Title
+                            <span *ngIf="newTaskForm.controls.title.errors?.required && newTaskForm.controls.title.touched">is required</span>
+                        </ion-label>
+                        <ion-input type="text" formControlName="title" [(ngModel)]="newTask.Title"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Description</ion-label>
+                        <ion-input type="text" formControlName="description" [(ngModel)]="newTask.Description"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Attached Schedule
+                          <span *ngIf="newTaskForm.controls.attachedSchedule.errors?.required && newTaskForm.controls.attachedSchedule.touched">is required</span>
+                        </ion-label>
+                        <ion-select formControlName="attachedSchedule" [(ngModel)]="newTask.AttachedSchedule">
+                          <ion-option value="1">Schedule Title 1</ion-option>
+                          <ion-option value="2">Schedule Title 2</ion-option>
+                          <ion-option value="3">Schedule Title 3</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Start Date
+                           <span *ngIf="newTaskForm.controls.startDate.errors?.required && newTaskForm.controls.startDate.touched">is required</span> 
+                        </ion-label>
+                        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="startDate" [(ngModel)]="newTask.StartDate"></ion-datetime>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Start Time
+                           <span *ngIf="newTaskForm.controls.startTime.errors?.required && newTaskForm.controls.startTime.touched">is required</span> 
+                        </ion-label>
+                        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" formControlName="startTime" [(ngModel)]="newTask.StartTime"></ion-datetime>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Duration
+                          <span *ngIf="newTaskForm.controls.duration.errors?.required && newTaskForm.controls.duration.touched">is required</span>
+                        </ion-label>
+                        <ion-select formControlName="duration" [(ngModel)]="newTask.Duration">
+                          <ion-option value="1">10</ion-option>
+                          <ion-option value="2">20</ion-option>
+                          <ion-option value="3">30</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Occurrence Weekdays
+                          <span *ngIf="newTaskForm.controls.occurenceWeekDays.errors?.required && newTaskForm.controls.occurenceWeekDays.touched">is required</span>
+                        </ion-label>
+                        <ion-select formControlName="occurenceWeekDays" [(ngModel)]="newTask.OccurrenceWeekDays" multiple="true">
+                          <ion-option *ngFor="let week of weeks" value="{{week.Value}}">{{week.Name}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Occurrence Days
+                          <span *ngIf="newTaskForm.controls.occurenceDays.errors?.required && newTaskForm.controls.occurenceDays.touched">is required</span>
+                        </ion-label>
+                        <ion-select formControlName="occurenceDays" [(ngModel)]="newTask.OccurrenceDays">
+                          <ion-option value="1">10</ion-option>
+                          <ion-option value="2">20</ion-option>
+                          <ion-option value="3">30</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-4 col-md-4 col-sm-2></ion-col>
+                <ion-col col-4 col-md-4 col-sm-8>
+                        <button ion-button type="submit" [disabled]="newTaskForm.invalid">Add Task</button>
+                </ion-col>
+                <ion-col col-4 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
 </ion-content>

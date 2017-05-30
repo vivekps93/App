@@ -23,6 +23,7 @@ import {NewTask} from '../pages/task/new/task.new';
 
 //import services
 import {CountryService} from '../services/country.service';
+import {WeekService} from '../services/week.service';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {CountryService} from '../services/country.service';
   ],
   providers: [
     CountryService,
+    WeekService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

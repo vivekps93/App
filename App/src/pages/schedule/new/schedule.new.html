@@ -9,6 +9,82 @@
     </ion-buttons>
     </ion-navbar>
 </ion-header>
-<ion-content>
-    <h2>New Schedule</h2>
+<ion-content padding>
+    <form [formGroup]="newScheduleForm" (ngSubmit)="createSchedule()">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Title
+                            <span *ngIf="newScheduleForm.controls.title.errors?.required && newScheduleForm.controls.title.touched">is required</span>
+                        </ion-label>
+                        <ion-input type="text" formControlName="title" [(ngModel)]="newSchedule.Title"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Description</ion-label>
+                        <ion-input type="text" formControlName="description" [(ngModel)]="newSchedule.Description"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Attached Goal
+                          <span *ngIf="newScheduleForm.controls.attachedGoal.errors?.required && newScheduleForm.controls.attachedGoal.touched">is required</span>
+                        </ion-label>
+                        <ion-select formControlName="attachedGoal" [(ngModel)]="newSchedule.attachedGoal">
+                          <ion-option value="1">Goal Title 1</ion-option>
+                          <ion-option value="2">Goal Title 2</ion-option>
+                          <ion-option value="3">Goal Title 3</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>StartDate
+                           <span *ngIf="newScheduleForm.controls.startDate.errors?.required && newScheduleForm.controls.startDate.touched">is required</span> 
+                        </ion-label>
+                        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="startDate" [(ngModel)]="newSchedule.StartDate"></ion-datetime>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+                <ion-col col-10 col-md-4 col-sm-8>
+                    <ion-item>
+                        <ion-label floating>Occurance Days
+                           <span *ngIf="newScheduleForm.controls.occuranceDays.errors?.required && newScheduleForm.controls.occuranceDays.touched">is required</span> 
+                        </ion-label>
+                        <ion-select formControlName="occuranceDays" [(ngModel)]="newSchedule.occuranceDays">
+                          <ion-option value="1">7</ion-option>
+                          <ion-option value="2">15</ion-option>
+                          <ion-option value="3">20</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-4 col-md-4 col-sm-2></ion-col>
+                <ion-col col-4 col-md-4 col-sm-8>
+                        <button ion-button type="submit" [disabled]="newScheduleForm.invalid">Add Schedule</button>
+                </ion-col>
+                <ion-col col-4 col-md-4 col-sm-2></ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
 </ion-content>

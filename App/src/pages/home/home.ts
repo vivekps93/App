@@ -1,5 +1,6 @@
 import {Component,ViewChild} from '@angular/core';
 import { App, MenuController,Nav } from 'ionic-angular';
+import {Router} from '@angular/router';
 
 import {Index} from '../home-index/home-index';
 import {Settings} from '../settings/settings';
@@ -16,7 +17,9 @@ export class Home{
 
     pages : Array<{title : string,component : any}> 
 
-    constructor(app: App, menu: MenuController) {
+    constructor(app: App,
+                 menu: MenuController,
+                 private router : Router) {
         menu.enable(true);
         console.log("inside home component");
 
@@ -30,5 +33,9 @@ export class Home{
 
     opnePage(page){
         this.nav.setRoot(page.component);
+    }
+
+    logOut(){
+        this.router.navigate(['login']);
     }
 }
